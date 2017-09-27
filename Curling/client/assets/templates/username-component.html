@@ -1,0 +1,42 @@
+<div class="main-wrapper row">
+    <div class="col-md-12">
+    <diV>
+        <img src="../assets/images/curling-logo.png" alt="logo" />
+    </diV>
+        <button type="button" id="leaderboardBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
+            (click)='goToLeaderBoard()'>
+        <p>Tableau des scores <span class="glyphicon glyphicon-stats" aria-hidden="true"></span></p>
+    </button>
+
+    </div>
+
+    <div class="user-setting col-md-12">
+        <div id="username" class="form-group user-setting-content">
+            <div #alertBox class="col-md-6 col-md-offset-3 alert alert-danger alert-dismissible show" role="alert">
+                <button type="button" class="close" (click)="closeAlert()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+                <strong>Pseudonyme déjà existant.</strong> Essayez-en un autre!
+            </div>
+
+            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 input-box">
+                <form #f='ngForm'>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <md-input-container>
+                                <input id="loginInput" autofocus (keyup)="activateLoginNext(username.value)" class="shake" type='text' mdInput placeholder='Entrer votre pseudo ...'
+                                    #username />
+                            </md-input-container>
+                        </div>
+                        <div class="col-md-1">
+                            <button id="loginNext" type="submit" class="btn btn-secondary btn-lg" *ngIf="_isLoginNextActivated" (click)="verifyUsername(username.value)">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

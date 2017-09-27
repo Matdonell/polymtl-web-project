@@ -1,0 +1,56 @@
+.card {
+    position: fixed;
+    top: 30%;
+    left: 33%;
+    text-align: center;
+    font-size: 28px;
+    width: 512px;
+    height: 240px;
+}
+
+md-card-title {
+    color: black;
+    height: 176px;
+}
+
+#container {
+    /*background-color: rgba(122, 133, 255, 0.9);*/
+    background-image: url(' ../../assets/images/bg_image.jpg');
+}
+
+.difficulty-box {
+    border-right: 60px solid rgb(16, 108, 200);
+    -webkit-border-radius: 23px;
+    -moz-border-radius: 23px;
+    border-radius: 23px;
+    margin-bottom: 25px;
+    height: 230px;
+    box-shadow: 0 7px 8px -4px rgba(0, 0, 0, .2), 0 13px 19px 2px rgba(0, 0, 0, .14), 0 5px 24px 4px rgba(0, 0, 0, .12);
+    background-color: #fff;
+}
+
+.mdl-card__title {
+    padding-top: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.mdl-button--raised.mdl-button--colored {
+    background: rgb(16, 108, 200);
+    color: #fff;
+    margin-bottom: 10px;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    border-radius: 24px 24px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.mdl-button {
+    height: 40px;
+}
+
+.title-box {
+    font-size: 40px;
+    margin-top: 15px;
+    color: #fff;
+}

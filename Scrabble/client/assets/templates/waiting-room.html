@@ -1,0 +1,40 @@
+<!-- HEADER -->
+<div class="header">
+    <div class="col-sm-6">
+        <img src="../assets/images/Scrabble_Logo.png" alt="logo" />
+    </div>
+    <div *ngIf="_username !== '' && _username !== undefined" class="col-sm-6">
+        <div class="pull-right">
+            <button md-fab class="btn-cancel" (click)="cancelGame()">
+                <i class="material-icons icon-medium-size">exit_to_app</i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- CONTENT -->
+<div class="col-xs-12 content vertical-center">
+    <md-card class="center-block col-xs-10 col-sm-8 col-md-5 col-lg-3">
+        <md-card-header>
+            <md-card-title>RECHERCHE DE JOUEURS</md-card-title>
+        </md-card-header>
+        <hr>
+        <md-card-content>
+            <div *ngIf="this !== undefined" class="centered vertical-center">
+                <div class="centered">
+                    <span *ngFor="let player of _numberOfPlayerConnected"><i class="material-icons icon-medium-size brown">person</i></span>
+                    <span *ngFor="let player of _numberOfPlayerMissing"><i class="material-icons icon-medium-size brown">person_outline</i></span>
+                </div>
+            </div>
+            <br/>
+            <div class="vertical-center">
+                <md-spinner class="centered" color="warm"></md-spinner>
+            </div>
+        </md-card-content>
+        <md-card-actions>
+            <button md-raised-button class="btn-form-cancel full-width" (click)="cancelGame()">
+            Annuler
+            </button>
+        </md-card-actions>
+    </md-card>
+</div>

@@ -1,0 +1,12 @@
+.container {
+    width: 30%;
+    border: 0px solid #d3d3d3;
+    background-color: white;
+}
+
+.logo {
+    padding-top: 2vh;
+    padding-left: 2vh;
+    height: 20vh;
+    min-height: 75px;
+}

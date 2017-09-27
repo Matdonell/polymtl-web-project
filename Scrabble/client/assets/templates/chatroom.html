@@ -1,0 +1,44 @@
+<md-card class="full-width">
+    <md-card-header>
+        <md-card-title>MESSAGERIE </md-card-title>
+        <span *ngIf="!wasClicked && hasNewMessages" class="glyphicon glyphicon-comment" blinking [duration]='650'></span>
+    </md-card-header>
+    <hr/>
+    <md-card-content class="chatMessageBox">
+        <div #scroll class="col-md-12" (click)="wasClicked = true" [ngClass]="{'has-messages': hasNewMessages }">
+            <div class="msg-wrapper" *ngFor="let response of messageArray">
+
+                <p class="msg-date">{{response._date | date: 'yMMMdjms'}}</p>
+                <div *ngIf="response._username===_username" class="self-message">
+                    <p *ngIf="response._commandType===0" class="msg">
+                        {{response._message}}
+                    </p>
+                    <p *ngIf="response._commandType !== 0" [ngClass]="{'command-request-ok':response._commandStatus===0, 
+                    'command-request-error':response._commandStatus!==0}">
+                        {{response._message}}
+                    </p>
+                </div>
+
+                <div *ngIf="response._username!==_username" class="other-message">
+                    <p>
+                        <img class="image-circle" src="../../assets/images/blank-user-img.png" alt="user id" align="left">
+                        <span>{{response._username}}</span>
+                    </p>
+                    <p *ngIf="response._commandType === 0" class="msg">
+                        <audio autoplay>
+                            <source src="../../assets/sounds/notification_sound.mp3" type="audio/mpeg">
+                        </audio>
+                        {{response._message}}
+                    </p>
+                    <p *ngIf="response._commandType === 4" class="msg msg-guide">
+                        {{response._message}}
+                    </p>
+                    <p *ngIf="response._commandType !== 0 && response._commandType !== 4" [ngClass]="{'command-request-ok':response._commandStatus===0,
+                     'command-request-error':response._commandStatus!==0}">
+                        {{response._message}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </md-card-content>
+</md-card>

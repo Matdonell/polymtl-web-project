@@ -1,0 +1,26 @@
+<div id="header">
+    <h1> Tableau des scores </h1>
+    <button id = "returnBtn" type='submit'
+            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" (click)='returnMainPage()'>
+        <p>Retour Menu principal <i class="material-icons">keyboard_return</i></p></button>
+</div>
+<div #leaderboard id="leaderboard">
+    <table id="lead-table" class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+        <thead>
+            <tr>
+                <th class="mdl-data-table__cell--non-numeric ">Pseudonyme</th>
+                <th>Score Joueur</th>
+                <th>Score CPU</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let record of leaderboardService.records">
+                <td>{{record._username}}</td>
+                <td>{{record._scorePlayer}}</td>
+                <td>{{record._scoreComputer}}</td>
+                <td>{{record._date}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

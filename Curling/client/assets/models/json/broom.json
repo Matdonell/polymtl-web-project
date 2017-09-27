@@ -1,0 +1,82 @@
+{
+	"metadata": {
+		"version": 4.4,
+		"type": "Object",
+		"generator": "Object3D.toJSON"
+	},
+	"geometries": [
+		{
+			"uuid": "D9EB6707-9BD7-4BAF-ADF2-C34F8E74EE7C",
+			"type": "CylinderBufferGeometry",
+			"radiusTop": 0.15,
+			"radiusBottom": 0.15,
+			"height": 4.24,
+			"radialSegments": 32,
+			"heightSegments": 1,
+			"openEnded": false
+		},
+		{
+			"uuid": "6BB60749-9777-4CDA-978B-41CF9106928B",
+			"type": "BoxBufferGeometry",
+			"name": "head",
+			"width": 2,
+			"height": 0.4,
+			"depth": 0.3,
+			"widthSegments": 0,
+			"heightSegments": 0,
+			"depthSegments": 0
+		}],
+	"materials": [
+		{
+			"uuid": "E1BDE7B2-FEA4-408E-871B-4C2F240C4A60",
+			"type": "MeshStandardMaterial",
+			"color": 16716055,
+			"roughness": 0.5,
+			"metalness": 0.5,
+			"emissive": 16716055,
+			"vertexColors": 2,
+			"depthFunc": 3,
+			"depthTest": true,
+			"depthWrite": true,
+			"skinning": false,
+			"morphTargets": false
+		},
+		{
+			"uuid": "7EDCF73F-F576-47A5-9563-6D949DD1C2D1",
+			"type": "MeshStandardMaterial",
+			"color": 16716055,
+			"roughness": 0.5,
+			"metalness": 0.5,
+			"emissive": 16716055,
+			"vertexColors": 2,
+			"transparent": true,
+			"depthFunc": 3,
+			"depthTest": true,
+			"depthWrite": true,
+			"skinning": false,
+			"morphTargets": false
+		}],
+	"object": {
+		"uuid": "428835B1-3E4E-4190-8F26-7BC11D6643F7",
+		"type": "Group",
+		"name": "Group 1",
+		"matrix": [0,0,0.5,0,0,0.5,0,0,-0.5,0,0,0,0,0.1,0,1],
+		"children": [
+			{
+				"uuid": "73CE45AA-1E07-4F31-8541-BFD9E7872CC5",
+				"type": "Mesh",
+				"name": "stick",
+				"matrix": [0.968583,0.17024,-0.181287,0,0,0.728969,0.684547,0,0.24869,-0.663041,0.706067,0,0,1.364871,0.624711,1],
+				"geometry": "D9EB6707-9BD7-4BAF-ADF2-C34F8E74EE7C",
+				"material": "E1BDE7B2-FEA4-408E-871B-4C2F240C4A60"
+			},
+			{
+				"uuid": "F14824CB-CB4E-4078-8C00-96DF83B86ACA",
+				"type": "Mesh",
+				"name": "Box 3",
+				"matrix": [1,0,0,0,0,0.939693,0.34202,0,0,-0.34202,0.939693,0,0,0,-0.76,1],
+				"geometry": "6BB60749-9777-4CDA-978B-41CF9106928B",
+				"material": "7EDCF73F-F576-47A5-9563-6D949DD1C2D1"
+			}]
+	}
+}

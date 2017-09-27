@@ -1,0 +1,49 @@
+<!-- HEADER -->
+<div class="col-xs-12 header">
+    <div class="col-xs-12 col-sm-6">
+        <img src="../assets/images/Scrabble_Logo.png" alt="logo" />
+    </div>
+    <div *ngIf="_username !== '' && _username !== undefined" class="col-xs-12 col-sm-6">
+        <div class="pull-right">
+            <i class="material-icons">account_circle</i> {{ _username }}
+        </div>
+    </div>
+</div>
+
+<!-- CONTENT -->
+<div class="col-xs-12 content vertical-center">
+    <md-card class="center-block col-xs-10 col-sm-8 col-md-4 col-lg-2">
+        <md-card-header>
+            <div class="center-block">
+                <i class="material-icons icon-large-size brown">account_circle</i>
+            </div>
+        </md-card-header>
+            <md-card-content>
+                <div>
+                    <md-input-container class="full-width">
+                        <input mdInput #username
+                            pattern="[A-Za-z0-9]*"
+                            value="{{socketService.player.username || ''}}"
+                            placeholder="Pseudonyme"
+                            autocomplete="off"
+                            [disabled]="socketService.player.username !== ''"
+                            id="name"
+                            required/>
+                    </md-input-container>
+                </div>
+                <br/>
+                <div>
+                    <md-select class="full-width" placeholder="Nombre de joueurs" [(ngModel)]="_numberOfPlayers" name="numberOfPlayer">
+                        <md-option *ngFor="let nPlayer of _sortsOfGame" [value]="nPlayer">
+                            {{ nPlayer }} joueur<span *ngIf="nPlayer > 1">s</span>
+                        </md-option>
+                    </md-select>
+                </div>
+            </md-card-content>
+            <md-card-actions>
+                <button md-raised-button class="center-block btn-form full-width" [disabled]="username.value === '' || _numberOfPlayers === undefined" (click)="sendNewGameRequest(username.value, numberOfPlayers)">
+                    Jouer
+                </button>
+            </md-card-actions>
+    </md-card>
+</div>

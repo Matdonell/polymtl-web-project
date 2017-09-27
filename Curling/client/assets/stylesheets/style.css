@@ -1,0 +1,15 @@
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
+
+body {
+    /*background-image: url("../images/curling.jpg");*/
+    background-image: url(' ../../assets/images/bg_image.jpg');
+    background-size: cover;
+    margin: 0px;
+    overflow: hidden;
+}

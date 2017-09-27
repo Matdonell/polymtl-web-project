@@ -1,0 +1,110 @@
+<div class="col-md-12">
+    <div class="col-md-8 col-sm-7 grid-panel">
+        <div class="container-grid full-width">
+            <div *ngIf="_isLoading" class="center-spinner" layout="row" layout-sm="column" layout-align="space-around">
+                <md-spinner></md-spinner>
+            </div>
+            <div *ngIf="!_isLoading" class="form-control" class="grid-box center-grid">
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                        <tr class="grid" *ngFor="let row of _puzzle?._puzzle , let i = index" [attr.id]="'gridRowId' + i">
+                            <td *ngFor="let cell of row, let j = index" [attr.id]="'cellId' + i + '' + j">
+                                <input #attrRead class="readOnlyCell" *ngIf="!cell._hide" readonly maxlength="1" type="text" name="inputCell" id="{{i}}{{j}}"
+                                        [ngModel]="cell._value" (keydown)="onKeyDownEventHandler($event, attrRead.id)" />
+                                <input #attrWrite [ngClass]="{readWriteCell: !_puzzle._puzzle[i][j]._isRed, errorCell: _puzzle._puzzle[i][j]._isRed }"
+                                        *ngIf="cell._hide" maxlength="1" type="text" name="inputCell" id="{{i}}{{j}}" [(ngModel)]="cell._value"
+                                        oncopy="return false" onpaste="return false"
+                                        (keydown)="onKeyDownEventHandler($event, attrWrite.id)" (keyup)="onValueChange($event, attrWrite.id)"
+                                        (keypress)="validateInputValue($event)" />
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-5">
+        <md-card id="firstCard">
+            <md-card-content>
+                <h4> <i class="material-icons">face</i> &nbsp; {{_userSetting.name}}</h4>
+            </md-card-content>
+            <md-card-content>
+                <h4 *ngIf="_userSetting.difficulty === 0"> <i class="material-icons">star</i> &nbsp; FACILE </h4>
+                <h4 *ngIf="_userSetting.difficulty === 1"> <i class="material-icons">star</i> &nbsp; DIFFICLE </h4>
+            </md-card-content>
+            <md-card-content>
+                <i *ngIf="_hiddenClock" class="material-icons">alarm_off</i>
+                <h4 *ngIf="!_hiddenClock">
+                    <i *ngIf="!_hiddenClock" class="material-icons">alarm_on</i>
+                    {{_time.printHours()}} : {{_time.printMinutes()}} : {{_time.printSeconds()}}</h4>
+            </md-card-content>
+            <md-card-actions>
+                <button id="clockButton" md-raised-button (click)="toggleClock()"> <span>
+                    <ng-container *ngIf="!_hiddenClock"> Cacher </ng-container>
+                    <ng-container *ngIf="_hiddenClock"> Montrer </ng-container> l'horloge</span></button>
+            </md-card-actions>
+        </md-card>
+        <md-card class="actionCard">
+            <md-card-actions id="test123">
+                <button class="buttons" md-raised-button *ngIf="!_isLoading" (click)="initializeCurrentGrid()"> <span>Reset</span></button>
+                <button class="buttons" md-raised-button *ngIf="!_isLoading" (click)="getNewPuzzle(0)"> <span>Facile</span></button>
+                <button class="buttons" md-raised-button *ngIf="!_isLoading" (click)="getNewPuzzle(1)"> <span>Difficile</span></button>
+            </md-card-actions>
+        </md-card>
+        <div [ngClass]="{hidden: _isCongratulationMessageHidden}" class="col-md-12 alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" (click)="hideMessageCongratulation()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <strong>Felicitations !</strong> Vous avez réussi cette grille de niveau
+            <strong *ngIf="_userSetting.difficulty === 0">  FACILE. </strong>
+            <strong *ngIf="_userSetting.difficulty === 1">  DIFFICILE </strong>
+        </div>
+
+        <div id="leaderboard" [ngClass]="{hidden: _isTopRecordHidden}" class="col-md-12">
+            <md-tab-group>
+                <md-tab label="Facile" style="color: white;">
+                    <table id="lead-table-easy" class="table table-hover table-responsive">
+                        <thead class="thead-inverse">
+                        <tr>
+                            <th>Pseudonyme</th>
+                            <th>Temps</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let record of _easyRecords">
+                            <td>{{record.username}}</td>
+                            <td>
+                                <span *ngIf="record._time._hours < 10">0</span>{{record._time._hours}} :
+                                <span *ngIf="record._time._minutes < 10">0</span>{{record._time._minutes}} :
+                                <span *ngIf="record._time._seconds < 10">0</span>{{record._time._seconds}}
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </md-tab>
+                <md-tab label="Difficile">
+                    <table id="lead-table-hard" class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Pseudonyme</th>
+                            <th>Temps</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let record of _hardRecords">
+                            <td>{{record.username}}</td>
+                            <td>
+                                <span *ngIf="record._time._hours < 10">0</span>{{record._time._hours}} :
+                                <span *ngIf="record._time._minutes < 10">0</span>{{record._time._minutes}} :
+                                <span *ngIf="record._time._seconds < 10">0</span>{{record._time._seconds}}
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </md-tab>
+            </md-tab-group>
+        </div>
+    </div>
+</div>

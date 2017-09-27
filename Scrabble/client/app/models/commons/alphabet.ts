@@ -1,0 +1,29 @@
+export class Alphabet {
+    static LETTER_A = 'A';
+    static LETTER_B = 'B';
+    static LETTER_C = 'C';
+    static LETTER_D = 'D';
+    static LETTER_E = 'E';
+    static LETTER_F = 'F';
+    static LETTER_G = 'G';
+    static LETTER_H = 'H';
+    static LETTER_I = 'I';
+    static LETTER_J = 'J';
+    static LETTER_K = 'K';
+    static LETTER_L = 'L';
+    static LETTER_M = 'M';
+    static LETTER_N = 'N';
+    static LETTER_O = 'O';
+    static LETTER_P = 'P';
+    static LETTER_Q = 'Q';
+    static LETTER_R = 'R';
+    static LETTER_S = 'S';
+    static LETTER_T = 'T';
+    static LETTER_U = 'U';
+    static LETTER_V = 'V';
+    static LETTER_W = 'W';
+    static LETTER_X = 'X';
+    static LETTER_Y = 'Y';
+    static LETTER_Z = 'Z';
+    static LETTER_BLANK = 'blank';
+}

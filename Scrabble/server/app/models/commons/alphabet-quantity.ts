@@ -1,0 +1,29 @@
+export class AlphabetQuantity {
+    static readonly letterA = 9;
+    static readonly letterB = 2;
+    static readonly letterC = 2;
+    static readonly letterD = 3;
+    static readonly letterE = 15;
+    static readonly letterF = 2;
+    static readonly letterG = 2;
+    static readonly letterH = 2;
+    static readonly letterI = 8;
+    static readonly letterJ = 1;
+    static readonly letterK = 1;
+    static readonly letterL = 5;
+    static readonly letterM = 3;
+    static readonly letterN = 6;
+    static readonly letterO = 6;
+    static readonly letterP = 2;
+    static readonly letterQ = 1;
+    static readonly letterR = 6;
+    static readonly letterS = 6;
+    static readonly letterT = 6;
+    static readonly letterU = 6;
+    static readonly letterV = 2;
+    static readonly letterW = 1;
+    static readonly letterX = 1;
+    static readonly letterY = 1;
+    static readonly letterZ = 1;
+    static readonly blank = 2;
+}

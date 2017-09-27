@@ -1,0 +1,65 @@
+.imageContainer {
+    border: 2px solid #8D6E63;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.mainBoard .table {
+    margin: 2px;
+    table-layout: fixed;
+}
+
+.mainBoard .table tr:last-child {
+    line-height: 0px !important;
+}
+
+.mainBoard .table td {
+    width: 6.25%;
+    /*line-height: 0px !important;*/
+}
+.mainBoard .table td img {
+    max-width: 100%;
+}
+
+.table {
+    background-color: white;
+}
+
+div.mainBoard > div:lastchild > img.cell {
+    margin: 0;
+}
+
+td.imageContainer.rowIndex, 
+td.imageContainer.colIndex{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+td.imageContainer.colIndex,
+td.imageContainer.zeroIndex {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+
+td.imageContainer.rowIndex, 
+td.imageContainer.zeroIndex {
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+}
+
+td {
+    background-size: 100%;
+}
+
+.mainBoard {
+    background-color: white;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+}
+

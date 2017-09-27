@@ -1,0 +1,53 @@
+.info-element {
+    margin-bottom: 4px;
+    width: 100%;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 0.9em;    
+}
+
+.info-element-title {
+    font-weight: bold;
+    width: 49%;
+    display: inline-block
+}
+
+.info-element-data {
+    font-style: italic;
+    width: 49%;
+    display: inline-block;    
+}
+
+.player-online i {
+    color: #088c08;
+}
+
+.player-online {
+    position: relative;
+}
+
+.player-offline {
+    color: #859385;
+}
+
+.player-left-game-over {
+    text-decoration: line-through;
+}
+
+.player-online:first-of-type {
+    border: 2px solid #088c08;
+}
+
+md-card-title, md-card-header {
+    margin-bottom: 0px !important;
+}
+
+.info-panel-title{
+    font-size: 1.4em;
+}
+
+#player-you {
+    color: #4d3300;
+    position: absolute;
+    top: 35%;
+    right: 5px;
+}

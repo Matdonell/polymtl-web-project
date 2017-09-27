@@ -1,0 +1,119 @@
+.head-title {
+    height: 20%;
+}
+
+.control-panel-title {
+    font-size: 26px;
+    border-bottom: 2px solid dimgrey;
+    padding: 7px;
+    margin-top: 11px;
+}
+
+.info-wrapper {
+    background-color: #eee;
+}
+
+.easel-box {
+    padding: 15px;
+    margin-top:10px;
+}
+.content-wrapper {
+    height: 70%;
+    padding: 0px;
+}
+
+.input-box {
+    padding: 0;
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.16);
+}
+
+.input-box div.form-group {
+    margin: 0;
+    padding:7px;
+    height: 100%;
+}
+
+.chat-wrapper {
+    height: 80%;
+}
+
+.icon-left-box {
+    padding: 0;
+    height: 100%;
+    background-color: #eee;
+}
+
+.command-box-wrapper {
+    margin-top: 18px;
+    height: 68px;
+}
+
+
+textarea.form-control {
+    border: none;
+    height: auto;
+    border: 1px solid #ddd;
+}
+
+.submit-btn-box {
+    padding: 0;
+    height: 100%;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.16);
+}
+
+.btn-info,
+.btn-success,
+.primary {
+    width: 100%;
+    height: 100%;
+}
+
+button#btn-exchange, 
+button#submit-btn {
+    border-radius: 0px;
+}
+
+button#submit-btn {
+    color: #666;
+    background-color: #CFD8DC;
+    border-color: #ddd;
+}
+
+.footer-wrapper {
+    height: 10%;
+}
+
+.board-wrapper {
+    height: 80%;
+    padding: 0px;
+}
+
+.game-room {
+    width: 90%;
+ }
+
+#message-card{
+    margin-top: 10px;
+    padding: 2px 24px;
+}
+
+#message-input{
+    width: 85%;
+    display: inline-block;
+}
+
+#message-send{
+    width: 10%;
+    font-size: 1.4em;
+    color: #3f51b5;
+    display: inline-block;
+}
+
+#message-send button{
+    font-size: 1.4em;
+    background-color: transparent;
+    border: none;
+    color: #3f51b5;
+    display: inline-block;
+}

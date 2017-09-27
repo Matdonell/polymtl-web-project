@@ -1,0 +1,47 @@
+<md-card class="center-block full-width">
+    <md-card-header class="info-panel-header">
+        <md-card-title class="info-panel-title">
+            <i class="material-icons">info_outline</i> INFORMATIONS
+        </md-card-title>
+    </md-card-header>
+    <hr>
+    <md-card-content class="full-width">
+        <div class="info-element">
+            <div class="info-element-title">
+                <i class="material-icons">alarm</i> TEMPS
+            </div>
+            <div class="info-element-data">{{ printMinutes() }}: {{ printSeconds() }}</div>
+        </div>
+        <div *ngIf="_lettersOnEasel < 7">
+            <div class="info-element-title">CHEVALET</div>
+            <div class="info-element-data">{{ _lettersOnEasel }} lettre<span *ngIf="_lettersOnEasel > 1">s</span></div>
+        </div>
+        <div class="info-element">
+            <div class="info-element-title"><i class="material-icons">account_balance</i> BANQUE</div>
+            <div class="info-element-data">{{ _lettersInBank }} lettre<span *ngIf="_lettersInBank > 1">s</span></div>
+        </div>
+        <!-- JOUEURS ACTIFS -->
+        <md-list>
+            <!--*ngIf="_gameOfNPlayers > 1"-->
+            <md-divider></md-divider>
+            <h3 md-subheader>Joueurs</h3>
+            <md-list-item [ngClass]="(player.isOnline) ? 'player-online' : 'player-offline'" *ngFor="let player of _players">
+                <i class="material-icons" *ngIf="player.isOnline" md-list-icon>person</i>
+                <i class="material-icons" *ngIf="!player.isOnline" md-list-icon>person_outline</i>
+                <h4 md-line [ngClass]="(!player.leftDuringGame && !player.isOnline) ? 'player-left-game-over' : ''">{{player.username}}</h4>
+                <p md-line>Score : {{player.score}}</p>
+                <i *ngIf="player.username === _username" id="player-you" class="material-icons">face</i>
+            </md-list-item>
+            <md-divider></md-divider>
+        </md-list>
+        <br/>
+        <div *ngIf="_winner !== ''">
+            <div *ngIf="_isWinner" class="alert alert-success" role="alert">
+                <strong>Félicitations !</strong> Vous avez gagné.
+            </div>
+            <div *ngIf="!_isWinner" class="alert alert-danger" role="alert">
+                <strong>Dommage !</strong> {{ _winner }} a gagné.
+            </div>
+        </div>
+    </md-card-content>
+</md-card>

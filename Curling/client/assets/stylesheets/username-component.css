@@ -1,0 +1,158 @@
+#leaderboardBtn {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+}
+
+#leaderboardBtn p {
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+.user-setting {
+    position: absolute;
+    top: 20%;
+    overflow-y: hidden;
+}
+
+.user-setting-content {
+    text-align: center;
+    color: #ffffff;
+    font-size: 28px;
+}
+
+.pulsation {
+    -webkit-animation-name: pulsation;
+    animation-name: pulsation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.user-setting-content .btn-secondary {
+    background-color: transparent;
+}
+
+.user-setting-content .btn-secondary:hover {
+    color:  rgb(16, 108, 200);
+    background-color: white;
+}
+
+.mat-input-underline {
+    border-color:  rgb(16, 108, 200);
+}
+.user-setting-content input {
+    color: rgba(0, 0, 0, 0.87);
+    border: none;
+    border-bottom: none;
+    transition: border 0.3s;
+}
+
+/*.user-setting-content input:focus {
+    border-bottom: solid 2px yellow;
+}*/
+
+.user-setting-content p {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: white;
+    display: block;
+}
+
+.user-setting-content p:hover,
+.user-setting-content p:focus {
+    color: #f1f1f1;
+}
+
+.input-box {
+    border-right: 60px solid rgb(16, 108, 200);
+    border-radius: 23px;
+    margin-bottom: 25px;
+    height: 200px;
+    box-shadow: 0 7px 8px -4px rgba(0, 0, 0, .2), 0 13px 19px 2px rgba(0, 0, 0, .14), 0 5px 24px 4px rgba(0, 0, 0, .12);
+    background-color: #fff;
+}
+
+.input-box form div button {
+    color: rgb(16, 108, 200);
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+.mat-input-container {
+    margin-top: 40px;
+}
+
+.mat-input-placeholder-wrapper {
+    color: #000;
+    /*left: 21px;
+    top: -0.6em;
+    width: 100%;
+    overflow: hidden;*/
+    font-size: 23px;
+}
+
+.mat-input-container>.mat-input-wrapper {
+    margin: 1em 0 !important;
+    padding-bottom: 10px;
+}
+
+
+/*
+.user-setting-content span.mat-input-placeholder-wrapper {
+    left: 21px !important;
+    top: -0.6em !important;
+    width: 100%;
+    overflow: hidden;
+    font-size: 23px !important;
+}*/
+
+
+/*.user-setting-content .inputIconDemo {
+    min-height: 48px;
+}
+
+.user-setting-content md-input-container:not(.md-input-invalid)>md-icon.name {
+    color: dodgerblue;
+}
+
+.user-setting-content md-input-container.md-input-invalid>md-icon.name {
+    color: rgb(255, 82, 82);
+    ;
+}*/
+
+@media screen and (max-height: 450px) {
+    .user-setting p {
+        font-size: 20px
+    }
+}
+
+@-webkit-keyframes pulsation {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        -webkit-transform: scale3d(1.5, 1.5, 1.5);
+        transform: scale3d(1.5, 1.5, 1.5);
+    }
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes pulsation {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        -webkit-transform: scale3d(1.5, 1.5, 1.5);
+        transform: scale3d(1.5, 1.5, 1.5);
+    }
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}

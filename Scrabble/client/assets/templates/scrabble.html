@@ -1,0 +1,16 @@
+<div class="mainBoard full-width">
+    <table class="table full-width">
+        <tbody class="full-width">
+            <tr class="grid">
+                <td class="imageContainer zeroIndex"> </td>
+                <td class="imageContainer colIndex" *ngFor="let col of board?.squares[0] let i = index"> {{i+1}} </td>
+            </tr>
+            <tr class="grid" *ngFor="let row of board?.squares , let i = index" [attr.id]="'gridRowId' + i">
+                <td class="imageContainer rowIndex"> {{row[0]._position._row}}</td>
+                <td class="imageContainer" *ngFor="let square of row" [attr.id]="square._position._row + '' + square._position._column">
+                    <img src="../../assets/images/{{square._squareValue}}.jpg" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

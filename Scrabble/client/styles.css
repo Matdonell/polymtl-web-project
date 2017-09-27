@@ -1,0 +1,118 @@
+html, .full-height {
+    height: 100%;
+}
+
+body {
+    font-size: 16px;
+    font-family: WeblySleek UI, Segoe UI, Helvetica Neue, Arial, sans-serif;
+    line-height: normal;
+    background-image: url('../../assets/images/wood-table.jpg');
+    /*background-image: url('../../assets/images/bg_image.jpg');*/
+    margin: 0px;
+    height: 100%;
+}
+
+.header {
+    padding-top: 1%;
+    height: 14%;
+    max-height: 200px;     
+}
+
+.header > * {
+    height: 100%;
+}
+
+.header img{
+    width: auto;
+    max-height: 100%;
+}
+
+.content {
+    height: 85%;
+}
+
+md-card {
+    background-color: white;
+}
+
+md-card hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.vertical-center {
+    display: flex;
+    align-items: center;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.icon-medium-size {
+    font-size: 40px !important;
+}
+
+.icon-large-size {
+    font-size: 60px !important;
+}
+
+.brown {
+    color: #4d3300;
+}
+
+.btn-form {
+    border: 1px solid #4d3300 !important;
+    background-color: white !important;
+    color: #4d3300 !important;
+}
+
+.btn-form:hover {
+    border: 1px solid #4d3300 !important;
+    background-color: #4d3300 !important;
+    color: white !important;
+}
+
+.btn-form:disabled:hover {
+    border: 1px solid orangered !important;
+    cursor: not-allowed;
+    color: orangered !important;
+    background-color: white !important;    
+}
+
+.btn-form-cancel {
+    border: 1px solid red !important;
+    background-color: white !important;
+    color: red !important;
+}
+
+.btn-form-cancel:hover {
+    border: 1px solid red !important;
+    background-color: red !important;
+    color: white !important;
+}
+
+.btn-cancel {
+    border: 1px solid red !important;
+    background-color: red !important;
+    color: white !important;
+}
+
+.btn-cancel:hover {
+    border: 1px solid red !important;
+    background-color: white !important;
+    color: red !important;
+}
+
+#login-info {
+    background-color: transparent !important;
+    color: white !important;
+    text-align: center;
+    display: inline-block;
+    margin-right: 1vw;
+}
+
+.material-icons {
+    /*text-align: center;*/
+    vertical-align: middle;
+}

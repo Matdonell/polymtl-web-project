@@ -1,0 +1,148 @@
+<div *ngIf="!gameStatusService.isFinished">
+    <div class="menu-nav">
+        <button #hamburger (mousedown)="toggleOverlay($event)" class="hamburger hamburger--elastic pull-right" type="button">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+    </div>
+</div>
+<div class="textNextShot" *ngIf="renderService._angularInfo.showText">
+    {{_textToShow}}
+</div>
+
+<div *ngIf="!gameStatusService.isShooting" class="hide-cursor">&nbsp;</div>
+
+<div class="col-sm-12">
+    <modifier [container]="container"> </modifier>
+    <md-progress-bar *ngIf="renderService._angularInfo.isSelectingPower" class="power-bar" color="primary" mode="determinate"
+        [value]="renderService._angularInfo.powerBar">
+    </md-progress-bar>
+
+    <div *ngIf="renderService._angularInfo.isSelectingPower
+        && renderService._angularInfo !== null
+        && renderService._angularInfo.spin === 1" class="counterclockwiseArrow">
+        <button type="button" (click)="renderService.switchSpin()" class="btn btn-large btn-block btn-warning">
+            <img src=" ../../assets/images/clockwise-arrow.png" alt="Sens horaire" height="30vw" width="30vw">
+        </button>
+    </div>
+
+    <div *ngIf="renderService._angularInfo.isSelectingPower
+        && renderService._angularInfo.spin !== null
+        && renderService._angularInfo.spin === 0" class="counterclockwiseArrow">
+        <button type="button" (click)="renderService.switchSpin()" class="btn btn-large btn-block btn-warning">
+            <img src=" ../../assets/images/counterclockwise-arrow.png" alt="Sens anti-horaire"
+            height="30vw" width="30vw">
+        </button>
+    </div>
+    <div #container id="threejs"> </div>
+</div>
+
+<div id="display-component">
+    <div class="col-sm-12">
+        <div class="col-sm-4 pull-left">
+            <div id="playerName" class="pull-left">
+                {{_userSettingService.username}}
+            </div>
+        </div>
+        <div id="gameInfo" class="col-sm-4">
+            <div id="score" class="col-sm-12">
+                <span>{{gameStatusService.scorePlayer}}</span> - <span>{{gameStatusService.scoreComputer}}</span>
+            </div>
+            <div id="gameSet" class="col-sm-12">
+                <div class="col-sm-5">
+                    <div *ngIf="gameStatusService.currentSet < 1" id="firstSetToDo" class="pull-right"></div>
+                    <div *ngIf="gameStatusService.currentSet >= 1" id="firstSetDone" class="pull-right"></div>
+                </div>
+                <div class="col-sm-2 ">
+                    <div *ngIf="gameStatusService.currentSet < 2" id="secondSetToDo" class="pull-center"></div>
+                    <div *ngIf="gameStatusService.currentSet >= 2" id="secondSetDone" class="pull-center"></div>
+                </div>
+                <div class="col-sm-5 ">
+                    <div *ngIf="gameStatusService.currentSet < 3" id="thirdSetToDo" class="pull-left"></div>
+                    <div *ngIf="gameStatusService.currentSet >= 3" id="thirdSetDone" class="pull-left"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div id="computerName" class="pull-right">
+                {{this._computerName}}
+            </div>
+        </div>
+        <div class="col-sm-1">
+        </div>
+
+        <div class="col-sm-12">
+            <div id="playerStones" class="pull-left col-sm-3">
+                <div class="user-stone">
+                    <div *ngFor="let stone of gameStatusService.currentStonesPlayer">
+                        <img src=" ../../assets/images/stone-blue.png" alt="Pierre bleue" height="48" width="48">
+                    </div>
+                </div>
+            </div>
+            <div id="computerStones" class="pull-right col-sm-3">
+                <div class=" col-sm-12">
+                    <div class="computer-stone pull-right">
+                        <div *ngFor="let stone of gameStatusService.currentStonesComputer">
+                            <img src="../../assets/images/stone-red.png" alt="Pierre rouge" height="48" width="48" class="pull-right">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- The overlay -->
+<div *ngIf="!gameStatusService.isFinished">
+    <div #overlay id="myNav" class="overlay">
+        <div class="overlay-content">
+            <div class="overlay-box col-md-2 col-md-offset-5">
+                <button (click)="gameOver()" type="button" class="btn btn-lg btn-block btn-danger">
+                    <span class="glyphicon glyphicon-stop" aria-hidden="true"></span> Abandonner
+                </button>
+
+                <button (click)="restartGame()" type="button" class="btn btn-lg btn-block btn-success">
+                    <span class="glyphicon glyphicon-fast-backward" aria-hidden="true"></span> Recommencer
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="gameStatusService.isFinished">
+    <div id="endGame-window" class="endGame-overlay">
+        <div class="endGame-window-content">
+            <div class="leaderboard-content">
+                <table id="lead-table" class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--dp">
+                    <thead>
+                        <tr>
+                            <th class="mdl-data-table__cell--non-numeric ">Pseudonyme</th>
+                            <th>Score Joueur</th>
+                            <th>Score CPU</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let record of leaderboardService.records">
+                            <td>{{record._username}}</td>
+                            <td>{{record._scorePlayer}}</td>
+                            <td>{{record._scoreComputer}}</td>
+                            <td>{{record._date}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="endGame-buttons">
+                <button type="button" id="newGame-button" (click)="restartGame()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                    <p>RECOMMENCER UNE PARTIE <i class="material-icons">autorenew</i></p>
+                </button>
+
+                <button type="button" id="back-button" (click)="returnHomePage()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                    <p> RETOURNER À LA PAGE D'ACCUEIL <i class="material-icons">keyboard_return</i> </p>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

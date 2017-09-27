@@ -1,0 +1,89 @@
+body {
+    font-size: 16px;
+    font-family: WeblySleek UI,Segoe UI,Helvetica Neue,Arial,sans-serif;
+    line-height: normal;
+    background-image: url('https://go.americasmart.com/hubfs/_books/market-magazine-2016/files/extfile/backGroundImgURL.jpg');
+    margin: 0px;
+}
+
+.grid:nth-child(3n) {
+    border-bottom: 3px solid #616161;
+}
+.readOnlyCell:nth-child(3n) {
+    border-right: 3px solid #616161;
+}
+.grid:last-child, .readOnlyCell:last-child {
+    border: 1px solid #616161;
+}
+.table>tbody>tr>td {
+    border: 1px solid #616161;
+    padding: 2px 1px 2px 2px;
+    vertical-align: top;
+    color: black;
+    height: 30px;
+    width: 50px;
+}
+h2 {
+    color : lightgrey;
+}
+
+a:hover {
+    color: #FF4081;
+}
+.journalThead {
+    background-color: #F06292;
+    border-bottom: 1px solid #ddd;
+    color: white;
+}
+
+.readOnlyCell {
+    font-size: 17px;
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    border: 0px solid #ddd;
+    color:#fff;
+    background-color: whitesmoke;
+}
+
+.activities {
+    margin-top: 15px;
+    width: 70%;
+    text-align: center;
+}
+
+
+.mdl-button--icon {
+    margin-top: 9px;
+}
+
+#toast {
+    margin-bottom: 50px;
+}
+th {
+    border: 1px solid #616161;
+    text-align: center;
+}
+.journalTr {
+    background-color: #FCE4EC;
+}
+.journalTr:hover {
+    background-color: black;
+}
+.journalTr:nth-child(even) {
+    background-color: white;
+}
+.mdl-data-table th, .mdl-data-table td {
+    text-align: center;
+    font-size: 17px;
+}
+.cards{
+    width: 30%;
+    margin-top: 15px;
+    margin-right: 20px;
+    margin-left: 22px;
+}
+#refresh {
+    margin-left: 10px;
+}

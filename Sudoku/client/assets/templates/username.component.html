@@ -1,0 +1,25 @@
+<div>
+
+<form #f='ngForm' class="user-setting">
+    <div id="username" class="form-group user-setting-content">
+        <div #alertBox [ngClass]="{fade: _isErrorMessageHidden}" class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" (click)="closeAlert()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <strong>Pseudonyme déjà existant.</strong> Essayez-en un autre!
+        </div>
+        <md-input-container class="example-full-width">
+            <input mdInput 
+                autofocus
+                onblur="this.focus()"
+                #username
+                (input)="activateLoginNext()"
+                (keypress)="_isErrorMessageHidden = true;" 
+                placeholder="Entrez votre pseudo..."
+                autocomplete="off">
+        </md-input-container>
+        <button id="loginNext" type="submit" class="btn btn-primary btn-lg" *ngIf="_isLoginNextActivated" (click)="verifyUsername(username.value)">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        </button>
+    </div>
+</form>

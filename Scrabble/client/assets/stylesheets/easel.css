@@ -1,0 +1,28 @@
+div#easelContainer > input {
+    width:35px;
+    height:35px;
+    border:1px solid #000;
+    margin:1px;
+    float:left;
+    display:table-cell;
+    text-align:center;
+}
+
+div#easelContainer > input:focus {
+    border:  3px solid red;
+    box-shadow: 0 1px 1px red inset, 0 0 8px red;
+    outline: 0 none;
+}
+
+div#easelContainer {
+    height: 49px;
+    width: 290px;
+    border: 2px solid #6a4305;
+    background-color: #916a32;
+    align-content: center;
+    padding: 4px;
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}

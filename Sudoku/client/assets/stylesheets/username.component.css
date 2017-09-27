@@ -1,0 +1,123 @@
+#leaderboardBtn {
+    margin-top: 50px;
+}
+
+#leaderboardBtn p {
+    font-size: 16px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #424242;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+  color: #424242;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+  color: #424242;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: #424242;
+}
+
+.pulsation {
+    -webkit-animation-name: pulsation;
+    animation-name: pulsation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.user-setting {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow-y: hidden;
+}
+
+.user-setting-content {
+    position: relative;
+    top: 25%; 
+    width: 100%;
+    height: 100%; 
+    text-align: center; 
+    margin-top: 30px;
+    color: #fddccc;
+    font-size: 28px;
+}
+
+.user-setting-content .btn-secondary {
+    background-color: transparent;
+}
+
+.user-setting-content .btn-secondary:hover {
+    color: rgb(70,50,255);
+    background-color: white;
+}
+
+.user-setting-content input {
+    background: transparent;
+    font-style: italic;
+    font-size: 24px;
+    border: none;
+    border-bottom: solid 2px white;
+    transition: border 0.3s;
+    min-width: 20%;
+}
+
+.user-setting-content input:focus {
+    border-bottom: 0;
+}
+
+.user-setting-content p {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: white;
+    display: block; 
+}
+
+.user-setting-content p:hover, .user-setting-content p:focus {
+    color: #f1f1f1;
+}
+
+input {
+    width: 350px;
+}
+
+@media screen and (max-height: 450px) {
+    .user-setting p {font-size: 20px}
+}
+
+@-webkit-keyframes pulsation {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        -webkit-transform: scale3d(1.5, 1.5, 1.5);
+        transform: scale3d(1.5, 1.5, 1.5);
+    }
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes pulsation {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        -webkit-transform: scale3d(1.5, 1.5, 1.5);
+        transform: scale3d(1.5, 1.5, 1.5);
+    }
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}

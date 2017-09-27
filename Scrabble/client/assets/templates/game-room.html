@@ -1,0 +1,42 @@
+<!-- HEADER -->
+<div class="col-xs-12 header">
+    <div class="col-sm-6">
+        <img src="../assets/images/Scrabble_Logo.png" alt="logo" />
+    </div>
+    <div *ngIf="_username !== '' && _username !== undefined" class="col-sm-6">
+        <div class="pull-right">
+            <button md-fab class="btn-cancel" (click)="quitGame()">
+                <i class="material-icons icon-medium-size">exit_to_app</i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content game-room center-block">
+    <div class="col-sm-3">
+        <info-panel-selector>Chargement du panneau d'informations...</info-panel-selector>
+    </div>
+
+    <div class="col-sm-5">
+        <scrabble-main-board-selector>Chargement du Scrabble...</scrabble-main-board-selector>
+        <easel-selector (easelTabKeyEvent)="onTabKeyEventFromEasel($event)">Chargement du chevalet...</easel-selector>
+    </div>
+
+    <div class="col-sm-4">
+        <scrabble-chatroom-selector>Chargement du chat...</scrabble-chatroom-selector>
+        <md-card id="message-card" class="full-width">
+            <md-card-content>
+                <md-input-container id="message-input">
+                    <input mdInput #message id="inputMessage" [(ngModel)]="inputMessage" autofocus (keydown.enter)="submitMessage();false" (keydown)="onKeyPressEventHandler($event)"
+                        placeholder="Message">
+                </md-input-container>
+                <div id="message-send">
+                    <button (click)="submitMessage(message)">
+                            <i class="material-icons">send</i>
+                        </button>
+                </div>
+            </md-card-content>
+        </md-card>
+    </div>
+</div>
