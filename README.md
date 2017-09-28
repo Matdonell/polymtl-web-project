@@ -40,7 +40,7 @@ npm start
 * **Laurent Olivier Chiquette** - [LoChiquette](https://github.com/LoChiquette)
 * **Rami Eid** - [Rami-Eid](https://github.com/rami-eid)
 * **Mathieu Kaboré** - [MatDonell](https://github.com/MatDonell)
-* **Dominik Courcelles** 
+* **Dominik Courcelles** - [dcourcel](https://github.com/dcourcel)
 
 
 ## License
